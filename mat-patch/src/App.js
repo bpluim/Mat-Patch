@@ -1,24 +1,64 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
-  return (
+
+  const mobileNavHandler = () => {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+      x.className += " responsive";
+    } else {
+      x.className = "topnav";
+    }
+  }
+
+  return (    
+
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        
+          <div className="topnav" id="myTopnav">
+            <a href="#section_1" className="active">Home</a>
+            <a href="#news">News</a>
+            <a href="#contact">Contact</a>
+            <a href="#about">About</a>
+            <a href="javascript:void(0);" 
+              className="icon" 
+              onClick={ () => mobileNavHandler() }>
+              <i className="fa fa-bars"></i>
+            </a>
+          </div>
       </header>
+      <div className="body">
+        <div id="section_1">
+          <div className="overlay">
+
+          </div>
+        </div> 
+        <div id="section_2">
+          <div className="overlay"> 
+          
+          </div> 
+        </div> 
+        <div id="section_3">
+          <div className="overlay">
+          
+          </div> 
+        </div> 
+        <div id="section_4">
+          <div className="overlay">
+          
+          </div> 
+        </div> 
+        <div id="section_5">
+          <div className="overlay">
+          
+          </div> 
+        </div> 
+      </div>
+      <footer>
+
+      </footer>
     </div>
   );
 }
